@@ -12,9 +12,8 @@
 
 (function() {
     'use strict';
-
+    const matches = [];
     function extractMatches(regex) {
-        const matches = [];
         const allText = document.body.textContent; // Get all text content from the page
 
         const textElements = document.querySelectorAll("*"); // Select all elements
@@ -24,27 +23,19 @@
             const elementMatches = textContent.matchAll(regex);
 
             for (const match of elementMatches) {
-                if(matches.includes(match[0]) === false){matches.push(match[0])}; // Push the entire matched string
+                if(matches.includes(match[0]) === false){matches.push(match[0]); console.log(matches);} // Push the entire matched string
             }
         }
-
-        return matches;
     }
     function checkForClass(c) {
         setInterval(function() {
             var elements = document.getElementsByClassName(c);
 
             // Extract matches using the provided regex
-            const regex = /sk-([a-zA-Z0-9]{20})T3BlbkFJ([a-zA-Z0-9]{20})/g;
-            const matches = extractMatches(regex);
-
-            if (matches) {
-                console.log("Matches:", matches);
-            } else {
-                console.log("No matches found.");
-            }
+            extractMatches(/sk-([a-zA-Z0-9]{20})T3BlbkFJ([a-zA-Z0-9]{20})/g);
+            extractMatches(/sk-proj-([a-zA-Z0-9]{20})T3BlbkFJ([a-zA-Z0-9]{20})/g);
             elements[0].click()
-        }, 2000);
+        }, 250);
     }
 
     checkForClass("T7sFge");
