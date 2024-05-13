@@ -1,5 +1,7 @@
 # uhhhhh...
 
+`future goals: webhooks, key verifying`
+
 
 ```
 "sk-" "openai" after:somedate
