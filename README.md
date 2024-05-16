@@ -15,7 +15,7 @@ old keys
 
 new keys
 ```
-"sk-proj-" "openai" after:somedate
-"sk-proj-" "openai" "gpt-3.5" after:somedate
-"sk-proj-" "openai" "gpt-4" after:somedate
+"sk-proj-" after:somedate
+"sk-proj-" "gpt-3.5" after:somedate
+"sk-proj-" "gpt-4" after:somedate
 ```
