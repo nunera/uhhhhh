@@ -20,6 +20,6 @@ new keys
 "sk-proj-" after:somedate
 "sk-proj-" "gpt-3.5" after:somedate
 "sk-proj-" "gpt-4" after:somedate
-"sk-proj"  "gpt-4o" after:somedate
-"sk-proj   "gpt-o1" after:somedate
+"sk-proj-" "gpt-4o" after:somedate
+"sk-proj-" "gpt-o1" after:somedate
 ```
