@@ -1,22 +1,3 @@
-name: Update README Date
-
-on:
-  schedule:
-    - cron: '0 0 * * *'  # Runs at 00:00 UTC daily
-  workflow_dispatch:      # Allows manual trigger
-
-jobs:
-  update-readme:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    
-    steps:
-      - uses: actions/checkout@v4
-      
-      - name: Create template README if it doesn't exist
-        run: |
-          cat > README.template.md << 'EOL'
 # uhhhhh...
 
 `future goals: webhooks, key verifying`
@@ -42,23 +23,3 @@ new keys
 "sk-proj-" "gpt-4o" after:somedate
 "sk-proj-" "gpt-o1" after:somedate
 ```
-EOL
-
-      - name: Reset README to template and update date
-        run: |
-          # Copy template to README
-          cp README.template.md README.md
-          
-          # Get current date minus 2 days in required format
-          date=$(date -d "2 days ago" '+%Y-%m-%d')
-          
-          # Replace all instances of 'somedate' with the calculated date
-          perl -i -pe "s/somedate/$date/g" README.md
-          
-      - name: Commit and push if changed
-        run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-          
-          git add README.md README.template.md
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Update dates to ${date}" && git push)
