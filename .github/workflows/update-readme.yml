@@ -14,37 +14,38 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Update README dates
+      - name: Create template README content
         run: |
-          # Create the template content with 'somedate'
           cat > README.md << 'EOL'
-# uhhhhh...
+          # uhhhhh...
 
-\`future goals: webhooks, key verifying\`
+          `future goals: webhooks, key verifying`
 
 
 
-***Fill out somedate with the format after:YEAR-MONTH-DAY or after:YEAR***
+          ***Fill out somedate with the format after:YEAR-MONTH-DAY or after:YEAR***
 
-old keys
-\`\`\`
-"sk-" "openai" after:somedate
-"sk-" "openai" "gpt-3.5" after:somedate
-"sk-" "openai" "gpt-4" after:somedate
-"sk-" "openai" "gpt-4o" after:somedate
-"sk-" "openai" "gpt-o1" after:somedate
-\`\`\`
+          old keys
+          ```
+          "sk-" "openai" after:somedate
+          "sk-" "openai" "gpt-3.5" after:somedate
+          "sk-" "openai" "gpt-4" after:somedate
+          "sk-" "openai" "gpt-4o" after:somedate
+          "sk-" "openai" "gpt-o1" after:somedate
+          ```
 
-new keys
-\`\`\`
-"sk-proj-" after:somedate
-"sk-proj-" "gpt-3.5" after:somedate
-"sk-proj-" "gpt-4" after:somedate
-"sk-proj-" "gpt-4o" after:somedate
-"sk-proj-" "gpt-o1" after:somedate
-\`\`\`
-EOL
-
+          new keys
+          ```
+          "sk-proj-" after:somedate
+          "sk-proj-" "gpt-3.5" after:somedate
+          "sk-proj-" "gpt-4" after:somedate
+          "sk-proj-" "gpt-4o" after:somedate
+          "sk-proj-" "gpt-o1" after:somedate
+          ```
+          EOL
+      
+      - name: Update dates in README
+        run: |
           # Get current date minus 2 days in required format
           date=$(date -d "2 days ago" '+%Y-%m-%d')
           
