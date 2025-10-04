@@ -4,22 +4,22 @@
 
 
 
-***Fill out 2025-10-01 with the format after:YEAR-MONTH-DAY or after:YEAR***
+***Fill out 2025-10-02 with the format after:YEAR-MONTH-DAY or after:YEAR***
 
 old keys
 ```
-"sk-" "openai" after:2025-10-01
-"sk-" "openai" "gpt-3.5" after:2025-10-01
-"sk-" "openai" "gpt-4" after:2025-10-01
-"sk-" "openai" "gpt-4o" after:2025-10-01
-"sk-" "openai" "gpt-o1" after:2025-10-01
+"sk-" "openai" after:2025-10-02
+"sk-" "openai" "gpt-3.5" after:2025-10-02
+"sk-" "openai" "gpt-4" after:2025-10-02
+"sk-" "openai" "gpt-4o" after:2025-10-02
+"sk-" "openai" "gpt-o1" after:2025-10-02
 ```
 
 new keys
 ```
-"sk-proj-" after:2025-10-01
-"sk-proj-" "gpt-3.5" after:2025-10-01
-"sk-proj-" "gpt-4" after:2025-10-01
-"sk-proj-" "gpt-4o" after:2025-10-01
-"sk-proj-" "gpt-o1" after:2025-10-01
+"sk-proj-" after:2025-10-02
+"sk-proj-" "gpt-3.5" after:2025-10-02
+"sk-proj-" "gpt-4" after:2025-10-02
+"sk-proj-" "gpt-4o" after:2025-10-02
+"sk-proj-" "gpt-o1" after:2025-10-02
 ```
